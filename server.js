@@ -4,7 +4,6 @@ import { connectMongoDatabase } from './config/db.js';
 dotenv.config({path:'config/config.env'})
 import {v2 as cloudinary} from 'cloudinary';
 import Razorpay from 'razorpay';
-
 connectMongoDatabase();
 cloudinary.config({
     cloud_name:process.env.CLOUDINARY_NAME,

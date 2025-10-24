@@ -8,10 +8,13 @@ import errorHandleMiddleware  from './middleware/error.js';
 import cookieParser from 'cookie-parser';
 import fileUpload from 'express-fileupload';
 import dotenv from 'dotenv'
+import cors from 'cors';
 const app=express();
 
+app.use(cors({origin:"*",methods:["POST","GET","PUT","DELETE"]}));
 // Middleware
 app.use(express.json())
+
 app.use(cookieParser())
 app.use(fileUpload({
   useTempFiles: true,
