@@ -8,8 +8,9 @@ import errorHandleMiddleware  from './middleware/error.js';
 import cookieParser from 'cookie-parser';
 import fileUpload from 'express-fileupload';
 import dotenv from 'dotenv'
+import cors from 'cors';
 const app=express();
-
+app.use(cors({origin:["http://localhost:5173","https://ecomm-second.vercel.app"],methods:["POST","GET","PUT","DELETE"],credentials: true}));
 // Middleware
 app.use(express.json())
 app.use(cookieParser())
