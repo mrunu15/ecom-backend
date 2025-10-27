@@ -14,10 +14,6 @@ export const sendToken = (user, statusCode, res) => {
   };
 
 
-  if (isProduction) {
-    options.domain = ".onrender.com";
-  }
-
   res
     .status(statusCode)
     .cookie("token", token, options)
