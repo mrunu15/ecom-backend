@@ -54,22 +54,7 @@ export const logout=handleAsyncError(async(req , res , next)=>{
         message:"Successfully Logged out"
     })
 })
-export const checktoken = handleAsyncError ( async(req,res,next)=>{
-    const token=req.cookies.token;
-    if(token){
-        console.log(" token ",token)
-        res.status(200).json({
-            success:true,
-            token:token,
-            message:" token is available"
-        })
-        return;
-    }
-    res.status(200).json({
-        success:true,
-        message:" token is unabailable"
-    })
-})
+
 
 // Forgot Password 
 export const requestPasswordReset=handleAsyncError(async(req,res,next)=>{
